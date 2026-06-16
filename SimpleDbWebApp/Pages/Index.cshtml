@@ -4,4 +4,15 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Hello !</h1>
+<h1>List of users</h1>
+<table>
+    @foreach(var u in Model.Users)
+    {
+        <tr>
+            <td><a href="/User/@u.Id">View</a></td>
+            <td>@u.FirstName</td>
+            <td>@u.LastName</td>
+        </tr>
+    }
+</table>
+<a href="/User/0">Create new user</a>
